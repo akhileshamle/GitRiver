@@ -15,6 +15,9 @@
 		049851AF21B863AB0025C38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049851AD21B863AB0025C38C /* LaunchScreen.storyboard */; };
 		049851BA21B863AB0025C38C /* GitRiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049851B921B863AB0025C38C /* GitRiverTests.swift */; };
 		049851C521B863AB0025C38C /* GitRiverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049851C421B863AB0025C38C /* GitRiverUITests.swift */; };
+		04997B9121B877ED005E2CD1 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04997B9021B877ED005E2CD1 /* SearchItem.swift */; };
+		04997B9421B87983005E2CD1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04997B9321B87983005E2CD1 /* Constants.swift */; };
+		04997B9621B87AB4005E2CD1 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04997B9521B87AB4005E2CD1 /* QueryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		049851C021B863AB0025C38C /* GitRiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitRiverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		049851C421B863AB0025C38C /* GitRiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRiverUITests.swift; sourceTree = "<group>"; };
 		049851C621B863AB0025C38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04997B9021B877ED005E2CD1 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		04997B9321B87983005E2CD1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04997B9521B87AB4005E2CD1 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,12 @@
 		049851A021B863AB0025C38C /* GitRiver */ = {
 			isa = PBXGroup;
 			children = (
-				049851A121B863AB0025C38C /* AppDelegate.swift */,
-				049851A321B863AB0025C38C /* ViewController.swift */,
-				049851A521B863AB0025C38C /* Main.storyboard */,
+				04997B9221B87972005E2CD1 /* Utilities */,
+				04997B8C21B87739005E2CD1 /* Model */,
+				04997B8F21B87772005E2CD1 /* Storyboards */,
+				04997B8B21B87729005E2CD1 /* Controller */,
+				04997B8D21B87744005E2CD1 /* Networking */,
+				04997B8E21B87755005E2CD1 /* Supporting Files */,
 				049851AB21B863AB0025C38C /* Assets.xcassets */,
 				049851AD21B863AB0025C38C /* LaunchScreen.storyboard */,
 				049851B021B863AB0025C38C /* Info.plist */,
@@ -126,6 +135,54 @@
 				049851C621B863AB0025C38C /* Info.plist */,
 			);
 			path = GitRiverUITests;
+			sourceTree = "<group>";
+		};
+		04997B8B21B87729005E2CD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				049851A321B863AB0025C38C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04997B8C21B87739005E2CD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04997B9021B877ED005E2CD1 /* SearchItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04997B8D21B87744005E2CD1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04997B9521B87AB4005E2CD1 /* QueryService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		04997B8E21B87755005E2CD1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				049851A121B863AB0025C38C /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04997B8F21B87772005E2CD1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				049851A521B863AB0025C38C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		04997B9221B87972005E2CD1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				04997B9321B87983005E2CD1 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04997B9421B87983005E2CD1 /* Constants.swift in Sources */,
+				04997B9121B877ED005E2CD1 /* SearchItem.swift in Sources */,
 				049851AA21B863AB0025C38C /* GitRiver.xcdatamodeld in Sources */,
 				049851A421B863AB0025C38C /* ViewController.swift in Sources */,
+				04997B9621B87AB4005E2CD1 /* QueryService.swift in Sources */,
 				049851A221B863AB0025C38C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FX3P99X26X;
 				INFOPLIST_FILE = GitRiver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FX3P99X26X;
 				INFOPLIST_FILE = GitRiver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
