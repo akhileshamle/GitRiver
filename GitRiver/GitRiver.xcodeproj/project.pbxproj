@@ -17,7 +17,7 @@
 		049851C521B863AB0025C38C /* GitRiverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049851C421B863AB0025C38C /* GitRiverUITests.swift */; };
 		04997B9121B877ED005E2CD1 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04997B9021B877ED005E2CD1 /* SearchItem.swift */; };
 		04997B9421B87983005E2CD1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04997B9321B87983005E2CD1 /* Constants.swift */; };
-		04997B9621B87AB4005E2CD1 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04997B9521B87AB4005E2CD1 /* QueryService.swift */; };
+		04997B9621B87AB4005E2CD1 /* GetSearchedResultQueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04997B9521B87AB4005E2CD1 /* GetSearchedResultQueryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		049851C621B863AB0025C38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04997B9021B877ED005E2CD1 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		04997B9321B87983005E2CD1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		04997B9521B87AB4005E2CD1 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
+		04997B9521B87AB4005E2CD1 /* GetSearchedResultQueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchedResultQueryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 		04997B8D21B87744005E2CD1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				04997B9521B87AB4005E2CD1 /* QueryService.swift */,
+				04997B9521B87AB4005E2CD1 /* GetSearchedResultQueryService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 				04997B9121B877ED005E2CD1 /* SearchItem.swift in Sources */,
 				049851AA21B863AB0025C38C /* GitRiver.xcdatamodeld in Sources */,
 				049851A421B863AB0025C38C /* ViewController.swift in Sources */,
-				04997B9621B87AB4005E2CD1 /* QueryService.swift in Sources */,
+				04997B9621B87AB4005E2CD1 /* GetSearchedResultQueryService.swift in Sources */,
 				049851A221B863AB0025C38C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
