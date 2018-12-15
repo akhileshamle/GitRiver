@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchedItem {
+class User {
     var login               : String
     var git_id              : Double
     var node_id             : String

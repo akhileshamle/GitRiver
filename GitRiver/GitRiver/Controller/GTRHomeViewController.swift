@@ -1,4 +1,4 @@
-///  GTRHomeViewController.swift
+//  GTRHomeViewController.swift
 //  GitRiver
 //  Created by Akhilesh Amle on 08/12/18.
 //  Copyright © 2018 AkhileshAmle. All rights reserved.
@@ -16,8 +16,8 @@ class GTRHomeViewController: UIViewController {
         return recognizer
     }()
     
-    var searchedItems : [SearchedItem] = []
-    var queryService = GetSearchedResultQueryService()
+    var users : [User] = []
+    var queryService = GetUsersQueryService()
     
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -47,12 +47,41 @@ extension GTRHomeViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.users.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        let user = self.users[indexPath.row]
+        cell.textLabel?.text = user.login
         return cell
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension GTRHomeViewController : UISearchBarDelegate {
+    
+    // MARK: - Private
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        // TODO: start activity
+        queryService.getSearchResults(searchedTerm: searchText) { (currentUsers, errorMessage) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            if let users = currentUsers {
+                self.users = users
+                self.tableView.reloadData()
+                // TODO: stop activity
+            }
+            
+            if errorMessage != nil {
+                // TODO: show alert
+                // TODO: stop activity
+            }
+            // TODO: stop activity
+        }
+        
     }
 }
