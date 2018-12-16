@@ -9,6 +9,7 @@ class GTRHomeViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Variables
     lazy var tapRecognizer : UITapGestureRecognizer = {
@@ -16,7 +17,7 @@ class GTRHomeViewController: UIViewController {
         return recognizer
     }()
     
-    var users : [User] = []
+    var users : [User?] = []
     var queryService = GetUsersQueryService()
     
     // MARK: - View Controller Life Cycle
@@ -40,6 +41,14 @@ class GTRHomeViewController: UIViewController {
     }
 }
 
+extension GTRHomeViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let user = self.users[indexPath.row] {
+            print(user)
+        }
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension GTRHomeViewController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,8 +62,9 @@ extension GTRHomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        let user = self.users[indexPath.row]
-        cell.textLabel?.text = user.login
+        if let user = self.users[indexPath.row] {
+            cell.textLabel?.text = user.login
+        }
         return cell
     }
 }
@@ -67,20 +77,21 @@ extension GTRHomeViewController : UISearchBarDelegate {
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         // TODO: start activity
+        self.activityIndicator.startAnimating()
         queryService.getSearchResults(searchedTerm: searchText) { (currentUsers, errorMessage) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             if let users = currentUsers {
                 self.users = users
                 self.tableView.reloadData()
-                // TODO: stop activity
+                self.activityIndicator.stopAnimating()
             }
             
             if errorMessage != nil {
                 // TODO: show alert
-                // TODO: stop activity
+                self.activityIndicator.stopAnimating()
             }
-            // TODO: stop activity
+            self.activityIndicator.stopAnimating()
         }
         
     }

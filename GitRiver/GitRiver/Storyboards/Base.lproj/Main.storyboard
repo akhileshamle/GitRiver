@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hif-bh-BaC">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,50 +9,83 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Git River-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="GTRHomeViewController" id="BYZ-38-t0r" customClass="GTRHomeViewController" customModule="GitRiver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GTRHomeViewController" title="Git River" id="BYZ-38-t0r" customClass="GTRHomeViewController" customModule="GitRiver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search user..." translatesAutoresizingMaskIntoConstraints="NO" id="9yB-iO-rd5">
-                                <rect key="frame" x="0.0" y="20" width="320" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="U2C-Sx-v8L"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-XA-f2H">
-                                <rect key="frame" x="0.0" y="76" width="320" height="492"/>
+                                <rect key="frame" x="0.0" y="169" width="320" height="399"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="uq9-xo-kDT"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="hoZ-zP-hXc"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2Gq-02-J1B">
+                                <rect key="frame" x="142" y="322.5" width="37" height="37"/>
+                                <color key="color" red="1" green="0.31184195897730127" blue="0.28374789338221917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search user..." translatesAutoresizingMaskIntoConstraints="NO" id="9yB-iO-rd5">
+                                <rect key="frame" x="0.0" y="113" width="320" height="56"/>
+                                <color key="barTintColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="U2C-Sx-v8L"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ocJ-XA-f2H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="67A-s7-fbY"/>
-                            <constraint firstItem="9yB-iO-rd5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7Q4-hp-rI0"/>
-                            <constraint firstItem="9yB-iO-rd5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7hs-Zq-y1p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ocJ-XA-f2H" secondAttribute="bottom" id="86u-ak-Luz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9yB-iO-rd5" secondAttribute="trailing" id="X2Z-bG-jOJ"/>
-                            <constraint firstItem="ocJ-XA-f2H" firstAttribute="top" secondItem="9yB-iO-rd5" secondAttribute="bottom" id="ebp-LV-GA7"/>
+                            <constraint firstItem="9yB-iO-rd5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fc3-7X-Xoz"/>
+                            <constraint firstItem="ocJ-XA-f2H" firstAttribute="top" secondItem="9yB-iO-rd5" secondAttribute="bottom" id="MZ4-3G-o5b"/>
+                            <constraint firstItem="2Gq-02-J1B" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nnt-4b-Sx2"/>
+                            <constraint firstItem="2Gq-02-J1B" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="RyQ-JA-JAn"/>
+                            <constraint firstItem="9yB-iO-rd5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fkR-5b-2aQ"/>
+                            <constraint firstItem="9yB-iO-rd5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j3a-bD-sti"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ocJ-XA-f2H" secondAttribute="trailing" id="rDS-1C-cCH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Git River" id="ocC-if-3G7"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="2Gq-02-J1B" id="CYi-03-Rwb"/>
                         <outlet property="searchBar" destination="9yB-iO-rd5" id="cP1-21-A6A"/>
                         <outlet property="tableView" destination="ocJ-XA-f2H" id="A6R-ZY-DCW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="50"/>
+            <point key="canvasLocation" x="611.25" y="49.647887323943664"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9WI-eq-myj">
+            <objects>
+                <navigationController id="Hif-bh-BaC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="CGc-IA-pUx">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="L3P-U6-NJR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Qd-sf-6mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159" y="50"/>
         </scene>
     </scenes>
 </document>
