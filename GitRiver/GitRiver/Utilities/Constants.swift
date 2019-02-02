@@ -28,6 +28,16 @@ struct Constants {
         // View Controller Identifiers
         struct ViewControllerIdentifier {
             static let gtrHomeViewController = "GTRHomeViewController"
+            static let gtrUserDetailsViewController = "GTRUserDetailsViewController"
+        }
+        
+        struct ViewIdentifiers {
+            static let gtrHomeUserTableViewCell = "GTRHomeUserTableViewCell"
+        }
+        
+        // Segue Identifiers
+        struct SegueIdentifiers {
+            static let nextViewController = "showGTRUserDetailsViewController"
         }
         
         // API Path
